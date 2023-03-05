@@ -18,7 +18,6 @@ public class BarrierController : MonoBehaviour
         spriteRenderer.sprite = asteroids[Random.Range(0, asteroids.Count)];
         var color = Color.HSVToRGB(Random.value, 0.5f, 1f);
         spriteRenderer.color = color;
-        GameObject[] meteorCountObjects = GameObject.FindGameObjectsWithTag("MeteorCount");
     }
 
     private void Update()

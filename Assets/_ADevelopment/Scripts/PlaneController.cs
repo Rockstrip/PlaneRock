@@ -15,8 +15,11 @@ public class PlaneController : MonoBehaviour
     private long balance;
     public UnityEvent barrierEntered;
     private TextMeshProUGUI meteorCountText;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     private void Start()
     {
+        audioSource.clip = audioClip;
         GameObject[] meteorCountObjects = GameObject.FindGameObjectsWithTag("money");
         meteorCountText = meteorCountObjects[0].GetComponent<TextMeshProUGUI>();
         _camera = Camera.main;
@@ -46,7 +49,11 @@ public class PlaneController : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent<BarrierController>(out var barrier))
+        {
+            audioSource.Play();
             ChangeText();
+        }
+            
     }
     
     void ChangeText()

@@ -9,7 +9,13 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField] private PlaneController planeController;
     [SerializeField] private GameObject content;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
 
+    void Start()
+    {
+        audioSource.clip = audioClip;
+    }
     private void OnEnable()
     {
         planeController.barrierEntered.AddListener(OnBarrierEntered);
@@ -22,6 +28,7 @@ public class GameOver : MonoBehaviour
     private void OnBarrierEntered()
     {
         Time.timeScale = 0f;
+        audioSource.Play();
         content.SetActive(true);
     }
 }
