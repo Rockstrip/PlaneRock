@@ -3,7 +3,11 @@ guid: cec4fb4170d01454886be4fe9f9b3f9d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - barrierController: {instanceID: 0}
+  - root: {instanceID: 0}
+  - background: {instanceID: 0}
+  - objectToPool: {fileID: 3607850243247992597, guid: 1b078e6faaa5abf47a3b97b78dbab507, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

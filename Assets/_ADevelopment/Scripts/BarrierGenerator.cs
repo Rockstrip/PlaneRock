@@ -24,7 +24,7 @@ public class BarrierGenerator : MonoBehaviour
         get => _speed;
         private set => _speed = value < speedLimit ? value : speedLimit;
     }
-
+    
     private IEnumerator Start()
     {
         StartCoroutine(IncreaseSpeed());
@@ -47,7 +47,7 @@ public class BarrierGenerator : MonoBehaviour
             // localSpeed *= speedMultiplayer;
             background.SetFloat(SpeedID, Speed);
             Speed += speedMultiplayer * Time.deltaTime * 0.1f;
-            Debug.Log(Speed);
+            //Debug.Log(Speed);
             yield return null;
         }
     }

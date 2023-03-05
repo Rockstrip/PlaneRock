@@ -24,10 +24,4 @@ public class GameOver : MonoBehaviour
         Time.timeScale = 0f;
         content.SetActive(true);
     }
-
-    public void OnButtonRetryClicked()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }
