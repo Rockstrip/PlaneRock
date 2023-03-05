@@ -30,7 +30,13 @@ public class PlaneController : MonoBehaviour
     private void Update()
     {
         if (Input.touchCount <= 0) return;
-        
+
+        Vector2 touchPosition = Input.GetTouch(0).position;
+        if (touchPosition.y > Screen.height * 0.75)
+        {
+            return;
+        }
+
         var touchX = Input.touches[0].position.x;
         var planeX = _camera.WorldToScreenPoint(transform.position).x;
 
